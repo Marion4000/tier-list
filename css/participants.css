@@ -1,0 +1,28 @@
+.participants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+.participants h1 {
+  min-width: 70vw;
+  border: 2px solid var(--marron-fonce);
+  border-radius: 50px;
+
+  text-align: center;
+  color: var(--marron-fonce);
+
+  transition: background-color var(--temps-s);
+}
+
+.participants a {
+  display: block;
+  padding: var(--taille-xl);
+}
+
+.participants h1:hover {
+  color: var(--orange-clair);
+  background-color: var(--marron-fonce);
+}
