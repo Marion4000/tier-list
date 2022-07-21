@@ -1,40 +1,40 @@
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-
-  background-color: var(--orange);
-  padding: var(--taille-s);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: var(--orange);
+    padding: var(--taille-s);
 }
 
-header > a {
-  position: absolute;
-  top: var(--taille-s);
-  left: calc(100vw / 2);
+header>a {
+    position: absolute;
+    top: var(--taille-s);
+    left: calc(100vw / 2);
 }
 
-header > a,
+header>a,
 header button {
-  display: block;
-  height: var(--taille-xl);
-  width: var(--taille-xl);
+    display: block;
+    height: var(--taille-xl);
+    width: var(--taille-xl);
 }
 
 header button {
-  border: 1px solid var(--marron-fonce);
-  background-color: var(--orange-fonce);
-  border-radius: 8px;
-  cursor: pointer;
+    border: 1px solid var(--marron-fonce);
+    background-color: var(--orange-fonce);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 header button:hover {
-  background-color: var(--marron-fonce);
+    background-color: var(--marron-fonce);
 }
+
+
 /* 
 
 
@@ -47,86 +47,30 @@ header button:hover {
 
 
 -------------------------NAV-----------*/
+
 nav {
-  position: absolute;
-  right: 0;
-  top: var(--hauteur-header);
-
-  width: 100%;
-  height: 100vh;
-  background-color: var(--marron-fonce);
-
-  padding: var(--taille-s) var(--taille-m);
-
-  text-align: right;
-
-  transition: right var(--temps-s);
+    position: absolute;
+    right: 0;
+    top: var(--hauteur-header);
+    width: 100%;
+    height: 100vh;
+    background-color: var(--marron-fonce);
+    padding: var(--taille-s) var(--taille-m);
+    text-align: right;
+    transition: right var(--temps-s);
 }
+
 nav a {
-  display: block;
-
-  padding: var(--taille-m);
-
-  font-size: var(--taille-l);
-  transition: color var(--temps-s);
+    display: block;
+    padding: var(--taille-m);
+    font-size: var(--taille-l);
+    transition: color var(--temps-s);
 }
 
 nav a:hover {
-  color: var(--orange-clair);
+    color: var(--orange-clair);
 }
 
 .invisible {
-  right: -100vw;
-}
-/* 
-
-
-
-
-
-
-
-
-
-
--------------------------MEDIA QUERIES-----------*/
-@media screen and (min-width: 800px) {
-  header button {
-    visibility: hidden;
-  }
-
-  header nav {
-    display: none;
-    position: absolute;
-    top: var(--hauteur-header);
-    left: 0;
-    height: unset;
-    padding: unset;
-    text-align: center;
-  }
-
-  header nav ul {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  header nav li {
-    width: 100%;
-  }
-
-  nav a {
-    padding: var(--taille-s);
-    color: var(--orange-clair);
-    font-size: var(--taille-m);
-    transition: background-color var(--temps-s);
-  }
-
-  nav a:hover {
-    background-color: var(--orange-clair);
-    color: var(--marron-fonce);
-  }
-
-  .invisible {
-    right: unset;
-  }
+    right: -100vw;
 }

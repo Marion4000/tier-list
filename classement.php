@@ -41,6 +41,7 @@
 <?php include('includes/header.php'); ?>
     <main>
         <h1> Tier list <?php echo$nom_cat; ?></h1>
+        <!-- Tableau classement -->
         <div>
             <p>S</p>
             <p>A</p>
@@ -81,7 +82,7 @@
                     $contenu .= '<img src="images/'.$nom_cat.'/'.$img.'" alt="'.$nom.'">';
                     $contenu .= '<figcaption>'.$nom.'</figcaption>';
                     $contenu .= '</figure>';
-                echo $contenu;
+                echo $contenu; 
                 }
                 
                 // Terminer le traitement de la requête
@@ -93,6 +94,9 @@
         }
         ?>
         </div>   
+
+        <!-- Voter  -->
+        <a href="formulaire.php">Voter !</a>
     </main>
     <script src="js/script.js"></script>
 </body>

@@ -1,0 +1,53 @@
+/* 
+
+
+-------------------------MEDIA QUERIES-----------*/
+
+@media screen and (min-width: 800px) {
+    /* 
+    
+    
+      Général  */
+    .no-scroll {
+        overflow: unset;
+    }
+    body {
+        padding-top: calc(var(--hauteur-header) + 3.5em);
+    }
+    /* 
+    
+    
+      Header  */
+    header button {
+        visibility: hidden;
+    }
+    header nav {
+        display: none;
+        position: absolute;
+        top: var(--hauteur-header);
+        left: 0;
+        height: unset;
+        padding: unset;
+        text-align: center;
+    }
+    header nav ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    header nav li {
+        width: 100%;
+    }
+    nav a {
+        padding: var(--taille-s);
+        color: var(--orange-clair);
+        font-size: var(--taille-m);
+        transition: background-color var(--temps-s);
+    }
+    nav a:hover {
+        background-color: var(--orange-clair);
+        color: var(--marron-fonce);
+    }
+    .invisible {
+        right: unset;
+    }
+}
