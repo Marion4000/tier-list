@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <?php 
-    if( isset($_GET['id']) ) {
-        if( !empty($_GET['id']) ) {
+    <?php 
+    if( isset($_GET['id']) && isset($_GET['nom']) ) {
+        if( !empty($_GET['id']) && isset($_GET['nom']) ) {
 
             $id = $_GET['id'];
-            $nom_cat = $_GET['nom'];
+            $nom_liste = $_GET['nom'];
 
             // on fait la requête SQL
             // Connexion à MySQL
@@ -37,26 +37,10 @@
     <title><?php echo $titre; ?> - Tier List </title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="classement">
+<body class="formulaire">
 <?php include('includes/header.php'); ?>
-    <main>
-        <h1> Tier list <?php echo$nom_cat; ?></h1>
-        <!-- Tableau classement -->
-        <div>
-            <p>S</p>
-            <p>A</p>
-            <p>B</p>
-            <p>C</p>
-            <p>D</p>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-        <!-- Récupération de tous les éléments de la liste  -->
-        <?php
+<!-- Récupération de tous les éléments de la liste  -->
+<?php
         if( isset($_GET['id']) ) {
             if( !empty($_GET['id']) ) {
                 // on mémorise l’id reçu en GET
@@ -77,12 +61,15 @@
                 while ( $donnees = $requete->fetch() ) {
                     $nom = $donnees['nom'];
                     $img = $donnees['img'];
-
+                    
                     $contenu = '<figure>';
                     $contenu .= '<img src="images/'.$nom_cat.'/'.$img.'" alt="'.$nom.'">';
                     $contenu .= '<figcaption>'.$nom.'</figcaption>';
                     $contenu .= '</figure>';
                 echo $contenu; 
+             
+                }
+              
                 }
                 
                 // Terminer le traitement de la requête
@@ -91,39 +78,7 @@
                 // Déconnexion de MySQL
                 $bdd = null;
             }
-        }
         ?>
-        </div>   
-
-        <!-- Voter  -->
-       <?php 
-       if( isset($_GET['id']) ) {
-        if( !empty($_GET['id']) ) {
-            // on mémorise l’id reçu en GET
-            $id_list = $_GET['id'];
-            $nom_cat = $_GET['nom'];
-            // on fait la requête SQL
-            // Connexion à MySQL
-            include('cnx.php');
-            // Récupération de l'id et du nom de la catégorie
-            $requete = $bdd->prepare('SELECT nom, id FROM categories WHERE id =:id_list');
-            // Exécuter la requête
-            $requete->execute(array(
-                'id_list' => $id_list
-            ));
-            while ( $donnees = $requete->fetch() ) {
-                echo '<a href="formulaire.php?id='.$donnees['id'].'&nom='.$donnees['nom'].'"> Voter !</a>';
-            }
-
-                // Terminer le traitement de la requête
-                $requete->closeCursor();
-
-                // Déconnexion de MySQL
-                $bdd = null;
-        }
-       }
-       ?>
-    </main>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>

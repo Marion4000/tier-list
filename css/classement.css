@@ -98,7 +98,7 @@ FIGURES -------------------*/
 
 Lien vote -------------------*/
 
-.classement a {
+.classement main a {
     display: block;
     /*  */
     border: 2px solid var(--marron-fonce);
