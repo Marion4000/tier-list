@@ -18,9 +18,9 @@
     
     
       Header  */
-    header button {
+    /* header button {
         visibility: hidden;
-    }
+    } */
     header nav {
         display: none;
         position: absolute;
